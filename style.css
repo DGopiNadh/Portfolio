@@ -40,14 +40,19 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .container {
@@ -168,11 +173,9 @@ body {
 .main-content {
     margin-left: 260px;
     padding: 0 4rem;
-    /* Add horizontal padding for breathing room */
-    transition: var(--transition);
+    transition: margin-left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
-    overflow: visible;
-    /* Ensure AOS animations aren't clipped */
+    max-width: 100%;
 }
 
 /* Hero Section */
@@ -515,24 +518,6 @@ body {
 }
 
 /* Apply floating ONLY after AOS animation is finished */
-.project-item.aos-animate,
-.skill-category.aos-animate,
-.exp-item.aos-animate {
-    animation: cardFloat 6s ease-in-out infinite;
-}
-
-.project-item:nth-child(2) {
-    animation-delay: 1s;
-}
-
-.skill-category:nth-child(2) {
-    animation-delay: 1.5s;
-}
-
-.exp-item:nth-child(2) {
-    animation-delay: 2s;
-}
-
 .skill-category h3 {
     font-size: 1rem;
     text-transform: uppercase;
@@ -731,10 +716,8 @@ body {
 }
 
 /* Responsive Logic */
-/* Global Header / Sidebar Transitions */
-.sidebar,
-.main-content {
-    transition: var(--transition);
+.sidebar {
+    transition: width 0.4s ease, transform 0.4s ease, background 0.4s ease;
 }
 
 /* Unified Responsive Logic */
