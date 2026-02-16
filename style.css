@@ -402,9 +402,13 @@ body {
 
 /* Sections */
 .section {
-    padding: 4rem 0;
-    /* Reduced from 10rem for less vertical space */
-    scroll-margin-top: 80px;
+  min-height: 100vh;
+  padding: 100px 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 
